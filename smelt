@@ -168,7 +168,7 @@ fi
 
 /etc/init.d/$MYSQLD start
 
-mysql < config/createdb.sql
+mysql -u root -p < config/createdb.sql
 
 # install chiliproject
 mkdir -p $INSTALL_DIR
@@ -223,7 +223,7 @@ popd
 source inst-script/redmine-plugins
 
 # Customize
-mysql alminium < config/init.mysql
+mysql alminium -u root -p < config/init.mysql
 
 mkdir -p /etc/opt/alminium
 $CPCMD etc/* /etc/opt/alminium/
